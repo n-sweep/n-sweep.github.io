@@ -228,14 +228,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p><a href="https://sweep.sh/posts/2024-10-24-go-in-python-1/">Go in Python, Part 1</a></p>
+<p>Read: <a href="https://sweep.sh/posts/2024-10-24-go-in-python-1/">Go in Python, Part 1</a></p>
 <figure class="figure">
 <img src="./images/go_weird_ai_image.png" class="figure-img">
 <figcaption>
 <i>Some weird generative AI art “about Go”. White seems to be in trouble.</i>
 </figcaption>
 </figure>
-<p>I have worked with a lot of web APIs, and I typically feel very comfortable with them. As I mentioned in last time, I was mostly satisfied by the simple existence of the API, though I stuck around long enough to note that the data we could request included a set of moves, either in <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> or something called an SGF file (more on that later). When I reached this point and was working through this initially, I felt I had made a mistake not going deeper on the API before beginning the game engine. However, in hindsight, I may have given up after failing this step for the third time had I not already built the engine.</p>
+<p>I have worked with a lot of web APIs, and I typically feel very comfortable with them. As I mentioned in last time, I was mostly satisfied by the simple existence of the API, though I stuck around long enough to note that the data we could request included a set of moves, either in <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> or something called an SGF file (more on that later). When I reached this point and was working through this problem initially, I felt I had made a mistake not going deeper on the API before beginning the game engine. However, in hindsight, I may have given up after failing this step for the third time had I not already built the engine.</p>
 <section id="documentation-important" class="level1">
 <h1>Documentation Important</h1>
 <p><img src="./images/ogs_api_search.png"></p>
@@ -247,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://forums.online-go.com">some forums</a></li>
 </ul>
 <p>On my initial visits, <a href="https://ogs.docs.apiary.io/#">ogs.docs.apiary.io</a> looks like what I need; <a href="https://ogs.readme.io/docs/real-time-api">ogs.readme.io</a> looks like it might be relevant but only has information on the real time API, which isn’t necessarily what I’m after; <a href="https://apidocs.online-go.com/">apidocs.online-go.com</a> seems out of date, with no information regarding authentication.</p>
-<p>Acting on these assumptions, I spent a week or two failing to implement anything working. I found forum posts complaining of incomplete and contradicting documentation, GitHub repos of other python implementations that no longer worked, and frustrated, I stepped away for a few days. But it kept eating at me that we were still able to play via a 3rd party Android app, <a href="https://play.google.com/store/apps/details?id=io.zenandroid.onlinego&amp;hl=en_US">Sente</a>, which is built specifically to play on OGS. They must have a functional API. Finally I stumbled on the <a href="https://forums.online-go.com/t/ogs-api-notes/17136">magic forum post that would make all my dreams come true</a> (major thanks to forum poster walken).</p>
+<p>Acting on these assumptions, I spent a week or two failing to implement anything successfully. I found forum posts complaining of incomplete and contradicting documentation, GitHub repos of other python implementations that no longer worked, and frustrated, I stepped away for a few days. But it kept eating at me that we were still able to play via a 3rd party Android app, <a href="https://play.google.com/store/apps/details?id=io.zenandroid.onlinego&amp;hl=en_US">Sente</a>, which is built specifically to play on OGS. They must have a functional API. Finally I stumbled on the <a href="https://forums.online-go.com/t/ogs-api-notes/17136">magic forum post that would make all my dreams come true</a> (major thanks to forum poster walken).</p>
 <p>I had two major takeaways from this post that allowed me to move forward with this project:</p>
 <ol type="1">
 <li>Authentication is done comepletely differently than in the documentation I was attempting to follow
